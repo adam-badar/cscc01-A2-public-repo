@@ -11,4 +11,11 @@
     | Shawn Santhoshgeorge  | `santhos7` | `1006094673` | <shawn.santhoshgeorge@mail.utoronto.ca> | `shawn.santhoshgeorge` |
 
 * Group 2:
+
+    | Full Name             | UTORID     | Student ID   | Email                                   | Slack User Name        |
+    | --------------------- | ---------- | ------------ | --------------------------------------- | ---------------------- |
+    | Aryan Thakur       | `thakurar` | `1006357899` | <aryan.thakur@mail.utoronto.ca>      | `Aryan Thakur`      |
+    | Shashwat Doshi          | `doshish2` | `1005716940` | <shashwat.doshi@mail.utoronto.ca>        | `Shashwat Doshi`         |
+    | Balraj Kharol  | `kharolba` | `1006045496` | <balraj.kharol@mail.utoronto.ca> | `Balraj Kharol` |
+    
 * Group 3:
