@@ -2,12 +2,12 @@
 FROM node:18-alpine AS base
 
 # Step 2: Set the working directory
-WORKDIR /client
+WORKDIR /client/app
 
-COPY ../package-lock*.json ./
+COPY ../../package-lock*.json .
 
 
-COPY package.json ./
+COPY ../package*.json .
 
 #Step 4: Install dependencies
 RUN npm i
@@ -22,4 +22,4 @@ RUN npm run build
 EXPOSE 3000
 
 #Run image
-CMD ["next", "dev"]
+CMD ["npm", "run", "prod"]
