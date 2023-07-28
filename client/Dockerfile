@@ -4,6 +4,7 @@ FROM node:18-alpine AS base
 # Step 2: Set the working directory
 WORKDIR /client/app
 
+#Step3: Copy needed files
 COPY package.json .
 
 COPY package-lock.json .
