@@ -14,7 +14,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-
+    
+    - name: Copy a single file to ./client
+      run: cp  ./package-lock.json ./client
+      
+    - name: Copy a single file to ./server
+      run: cp  ./package-lock.json ./server
+      
     - name: Build the Client Docker image
       env:
           DOCKERHUB_USERNAME: ${{ secrets.GROUP3_DOCKERHUB_USERNAME }}
