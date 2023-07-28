@@ -4,10 +4,10 @@ FROM node:18-alpine AS base
 # Step 2: Set the working directory
 WORKDIR /client/app
 
+COPY ../package*.json .
+
 COPY ../../package-lock*.json .
 
-
-COPY ../package*.json .
 
 #Step 4: Install dependencies
 RUN npm i
