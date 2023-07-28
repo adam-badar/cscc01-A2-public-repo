@@ -12,19 +12,25 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Get the current commit hash
         id: commit_hash
         run: echo ::set-output name=hash::$(git rev-parse --short HEAD)
 
       - name: Print commit hash
         run: echo "Commit hash:${{ steps.commit_hash.outputs.hash }}"
-        
+
       - name: Copy a single file to ./client
         run: cp  ./package-lock.json ./client
 
       - name: Copy a single file to ./server
         run: cp  ./package-lock.json ./server
+
+      - name: Set up Docker Build Environment for Client
+        run: echo "$ENV_FILE_CLIENT" > ./client/env
+
+      - name: Set up Docker Build Environment for Server
+        run: echo "$ENV_FILE_SERVER" > ./server/env
 
       - name: Build the Client Docker image
         env:
