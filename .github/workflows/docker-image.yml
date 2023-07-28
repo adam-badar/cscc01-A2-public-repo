@@ -29,7 +29,7 @@ jobs:
            cd client
            docker build --tag $DOCKERHUB_USERNAME/csc01-assignment2:$(date +%s) .
            echo "$DOCKERHUB_ACCESS_TOKEN" | docker login --username $DOCKERHUB_USERNAME --password-stdin
-           docker push  $DOCKERHUB_USERNAME/d3nam/csc01-assignment2:$(date +%s)
+           docker push  $DOCKERHUB_USERNAME/csc01-assignment2:$(date +%s)
 
 
     - name: Build the Server Docker image
