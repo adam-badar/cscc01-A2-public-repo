@@ -31,8 +31,8 @@ jobs:
 
       - name: Build the Server Docker image
         env:
-          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          DOCKERHUB_ACCESS_TOKEN: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
+          DOCKERHUB_USERNAME: ${{ secrets.GROUP3_DOCKERHUB_USERNAME }}
+          DOCKERHUB_ACCESS_TOKEN: ${{ secrets.GROUP3_DOCKERHUB_ACCESS_TOKEN }}
         run: |
           cd server
           docker build --tag $DOCKERHUB_USERNAME/csc01-assignment2:server-${{ steps.commit_hash.outputs.hash }} .
