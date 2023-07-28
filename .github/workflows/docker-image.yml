@@ -29,7 +29,7 @@ jobs:
            cd client
            docker build --tag $DOCKERHUB_USERNAME/assignment-2-agile-avengers:$(date +%s) .
            echo "$DOCKERHUB_ACCESS_TOKEN" | docker login --username $DOCKERHUB_USERNAME --password-stdin
-           docker push $DOCKERHUB_USERNAME/my_repository_name:latest
+           docker push $DOCKERHUB_USERNAME/assignment-2-agile-avengers:$(date +%s)
 
 
     - name: Build the Server Docker image
