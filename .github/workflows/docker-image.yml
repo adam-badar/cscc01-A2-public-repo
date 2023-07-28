@@ -27,10 +27,10 @@ jobs:
         run: cp  ./package-lock.json ./server
 
       - name: Set up Docker Build Environment for Client
-        run: echo "$ENV_FILE_CLIENT" > ./client/.env
+        run: echo "${{ secrets.ENV_FILE_CLIENT }}" > ./client/.env
 
       - name: Set up Docker Build Environment for Server
-        run: echo "$ENV_FILE_SERVER" > ./server/.env
+        run: echo "${{ secrets.ENV_FILE_SERVER }}" > ./server/.env
 
       - name: Build the Client Docker image
         env:
