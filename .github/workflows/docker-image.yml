@@ -2,42 +2,39 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "group-3" ]
+    branches: ['group-3']
   pull_request:
-    branches: [ "group-3" ]
+    branches: ['group-3']
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Copy a single file to ./client
-      run: cp  ./package-lock.json ./client
-      
-    - name: Copy a single file to ./server
-      run: cp  ./package-lock.json ./server
-      
-    - name: Build the Client Docker image
-      env:
+      - uses: actions/checkout@v3
+
+      - name: Copy a single file to ./client
+        run: cp  ./package-lock.json ./client
+
+      - name: Copy a single file to ./server
+        run: cp  ./package-lock.json ./server
+
+      - name: Build the Client Docker image
+        env:
           DOCKERHUB_USERNAME: ${{ secrets.GROUP3_DOCKERHUB_USERNAME }}
           DOCKERHUB_ACCESS_TOKEN: ${{ secrets.GROUP3_DOCKERHUB_ACCESS_TOKEN }}
-      run: |
-           cd client
-           docker build --tag $DOCKERHUB_USERNAME/csc01-assignment2:client-${{ steps.commit_hash.outputs.hash }} .
-           echo "$DOCKERHUB_ACCESS_TOKEN" | docker login --username $DOCKERHUB_USERNAME --password-stdin
-           docker push  $DOCKERHUB_USERNAME/csc01-assignment2:client-${{ steps.commit_hash.outputs.hash }}
+        run: |
+          cd client
+          docker build --tag $DOCKERHUB_USERNAME/csc01-assignment2:client-${{ steps.commit_hash.outputs.hash }} .
+          echo "$DOCKERHUB_ACCESS_TOKEN" | docker login --username $DOCKERHUB_USERNAME --password-stdin
+          docker push  $DOCKERHUB_USERNAME/csc01-assignment2:client-${{ steps.commit_hash.outputs.hash }}
 
-
-    - name: Build the Server Docker image
-      env:
+      - name: Build the Server Docker image
+        env:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKERHUB_ACCESS_TOKEN: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
-      run: |
-           cd server
-           docker build --tag $DOCKERHUB_USERNAME/csc01-assignment2:$(date +%s) .
-           echo "$DOCKERHUB_ACCESS_TOKEN" | docker login --username $DOCKERHUB_USERNAME --password-stdin
-           docker push $DOCKERHUB_USERNAME/csc01-assignment2:latest
+        run: |
+          cd server
+          docker build --tag $DOCKERHUB_USERNAME/csc01-assignment2:server-${{ steps.commit_hash.outputs.hash }} .
+          echo "$DOCKERHUB_ACCESS_TOKEN" | docker login --username $DOCKERHUB_USERNAME --password-stdin
+          docker push $DOCKERHUB_USERNAME/csc01-assignment2:server-${{ steps.commit_hash.outputs.hash }}
