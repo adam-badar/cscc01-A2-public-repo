@@ -1,22 +1,22 @@
 # System Design: Group-3
 ## Front-End
-Next
-Chakra-UI
-React
-Clerk
+- Next
+- Chakra-UI
+- React
+- Clerk
 
 ## Back-End
-Express
-Node 
-Mongoose
+- Express
+- Node 
+- Mongoose
 
 ## Database
-MongoDB Atlas
+- MongoDB Atlas
 
 ## CI/CD
-Docker
-Git Actions
-Docker Swarm?
+- Docker
+- Git Actions
+- Docker Swarm?
 
 
 
