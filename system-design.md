@@ -1,4 +1,9 @@
 # System Design: Group-3
+
+## CI/CD
+- Docker
+- Git Actions
+- Google Cloud Run
 ## Front-End
 - Next
 - Chakra-UI
@@ -7,16 +12,9 @@
 
 ## Back-End
 - Express
-- Node 
+- Node
 - Mongoose
+- Cors
 
 ## Database
 - MongoDB Atlas
-
-## CI/CD
-- Docker
-- Git Actions
-- Docker Swarm?
-
-
-
